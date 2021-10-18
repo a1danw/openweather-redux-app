@@ -1,0 +1,18 @@
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+import { useAppDispatch, useAppSelector } from "./redux/hooks/redux-hooks";
+import { testUseAppSelector } from "./test-app-selector";
+
+jest.mock("./redux/hooks/redux-hooks");
+
+describe("App", () => {
+  beforeEach(() => {
+    useAppSelector.mockImplementation(testUseAppSelector);
+  });
+
+  it("renders learn react link", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/learn react/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+});

@@ -1,0 +1,2 @@
+. useSelector and useDispatch exported from store instead of importing
+both(in Home.js) from react-redux to fix context value error

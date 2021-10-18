@@ -1,0 +1,2 @@
+. setCity is not a function - (e) => setCity(e.target.value) 
+. Modified the test using async/await and act to re-render the component on state change
